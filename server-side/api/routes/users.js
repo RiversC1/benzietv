@@ -8,8 +8,17 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+    const user = {
+        name: req.body.name,
+        lastName: req.body.lastName,
+        userName: req.body.userName,
+        password: req.body.password,
+        email: req.body.email
+    };
+
     res.status(200).json({
-        message: 'Handling POST request TO /users'
+        message: 'Handling POST request TO /users',
+        createUser: user
     });
 });
 
@@ -35,11 +44,9 @@ router.patch('/:userId', (req, res, next) => {
 
 router.put('/:userId', (req, res, next) => {
     res.status(290).json({
-        message: 'User totally updated'
+        message: 'User completely updated'  
     });
 });
-
-
 
 
 
